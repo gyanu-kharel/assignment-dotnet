@@ -1,0 +1,36 @@
+﻿@model Song
+
+<div>
+    <h1>Edit song details</h1>
+
+    <div class="row">
+        <div class="col-sm-6">
+            <form asp-action="Edit">
+                <input type="hidden" asp-for="Id" />
+                <div class="form-group">
+                    <label asp-for="Name" class="control-label"></label>
+                    <input asp-for="Name" class="form-control" value="@Model.Name" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="ReleasedDate" class="control-label"></label>
+                    <input asp-for="ReleasedDate" class="form-control" value="@Model.ReleasedDate" />
+                    <span asp-validation-for="ReleasedDate" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Artist" class="control-label"></label>
+                    <input asp-for="Artist" class="form-control" value="@Model.Artist" />
+                    <span asp-validation-for="Artist" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <input class="btn btn-primary" type="submit" value="Save" />
+                    <a class="btn btn-danger" asp-action="Index">Back</a>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
